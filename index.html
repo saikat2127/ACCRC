@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - Robotics Club</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-title">
+        <img src="images/logo.jpg" alt="Logo" class="logo" />
+        <h1><b>ACCRC</b></h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-tv"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-heart"></i> About</a></li>
+        <li><a href="sector.html"><i class="fas fa-robot"></i> Segments</a></li>
+        <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+        <li><a href="achievement.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-tv"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-heart"></i> About</a></li>
+        <li><a href="sector.html"><i class="fas fa-robot"></i> Segments</a></li>
+        <li><a href="event.html"><i class="fas fa-calendar-alt"></i> Events</a></li>
+        <li><a href="achievement.html"><i class="fas fa-trophy"></i> Achievements</a></li>
+        <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Home Content -->
+  <main class="content">
+    <section class="home-section">
+      <div class="intro-container">
+        <div class="intro-text">
+          <h1 class="filc-font">Welcome to</h1>
+          <h2 class="norwester-font">
+          <strong>ADAMJEE CANTONMENT COLLEGE<br>ROBOTICS CLUB</strong>
+          </h2>
+          <h3 class="filc-font">Revolutionizing with Robotics</h3>
+        </div>
+        <div class="custom-text">
+               <strong>“ACC ROBOTICS CLUB”</strong> is an inspiring<br>
+               club for every student of Adamjee Cantonment<br>
+               College.By working with this Club, everyone<br>
+               can be involved in <strong>ROBOTICS</strong> based<br>
+               tasks and develop knowledge by sharing ideas<br>
+               about <strong>ROBOTICS</strong> projects.</br></p>
+
+        </div>
+        <a href="about.html" class="know-us-button">Know Us</a>
+
+        <div class="tilt-container" id="tiltContainer">
+          <img src="images/ROBOT5.png" alt="3D Robot" class="three-d-image home-robot-image" id="robotImage" />
+        </div>
+      </div>
+    </section>
+
+      <!-- FOOTER -->
+ <footer>
+  <div class="footer-content">
+    <div class="footer-section club-info">
+      <p><strong>ADAMJEE CANTONMENT COLLEGE<br>ROBOTICS CLUB</strong></p>
+      <p>Evaluate your robotics talent with us</p>
+
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://google.com" target="_blank" class="google"><i class="fab fa-google"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section quick-links">
+      <p><strong>QUICK LINKS</strong></p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact-info">
+      <p><strong>CONTACT</strong></p>
+      <p>Phone: 01234567890</p>
+      <p>Email: accrc@acc.edu.bd</p>
+      <p>Address:<br>Adamjee Cantonment College,<br>Dhaka Cantonment, Dhaka</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; ACCRC</p>
+  </div>
+</footer>
+
+  </main>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+
+    const tiltContainer = document.getElementById('tiltContainer');
+    const robotImage = document.getElementById('robotImage');
+
+    tiltContainer.addEventListener('mousemove', (e) => {
+      const rect = tiltContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * 10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+      robotImage.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+    });
+
+    tiltContainer.addEventListener('mouseleave', () => {
+      robotImage.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+  </script>
+</body>
+</html>
